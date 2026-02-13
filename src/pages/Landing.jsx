@@ -1,20 +1,17 @@
-import React from "react";
-import { useState } from "react";
-
 function landing({onNavigate}){
     return(
-        <div style={{ padding: "20px",}}>
-            <h1>Welcome to Our Applicatioin</h1>
-            <nav style={{display:"flex",gap:"15px",marginBottom:"20px"}}>
-                <button onClick={() => onNavigate("home")}>Home</button>
-                <button onClick={() => onNavigate("about")}>About</button>
-                <button onClick={() => onNavigate("contact")}>Contact</button>
-                <button onClick={() => onNavigate("login")}>Login</button>
-                <button onClick={() => onNavigate("register")}>Register</button>
-                </nav>
+        <div style={{ padding: "20px", }}>
+            <h1>Welcome to Our Application</h1>
+            <nav style={{display:"flex",gap:"15px",marginBottom:"20px"}}> 
+            <button onClick={() => onNavigate("home")}>Home</button>
+            <button onClick={() => onNavigate("about")}>About</button>
+            <button onClick={() => onNavigate("contact")}>Contact</button>
+            <button onClick={() => onNavigate("login")}>login</button>
+            <button onClick={() => onNavigate("register")}>Register</button>
+            </nav>
 
-                <p>Welcome to the landing page of the website</p>
-        </div>
+            <p>Welcome to the landing page of the website</p>
+            </div>
     )
 }
 export default landing;

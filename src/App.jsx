@@ -6,18 +6,18 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Dashboard from './pages/Dashboard.jsx'
-import ApiDemo from './pages/ApiDemo.jsx'   // ✅ FIXED PATH
+import ApiDemo from './pages/ApiDemo.jsx'
 
 function App() {
   const [page, setPage] = useState("landing");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isRegistered , setRegistered] = useState(false);
+
   // session restore on refresh
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.isLoggedIn) {
       setIsLoggedIn(true);
-      setPage("dashboard");
+      setPage("dashboard"); // auto-redirect if logged in
     }
   }, []);
 
@@ -29,9 +29,8 @@ function App() {
       {page === "about" && <About />}
       {page === "contact" && <Contact />}
       {page === "api" && <ApiDemo />}
-
       {page === "register" && (
-        <Registration onRegisterSuccessful={() => setPage("login")} />
+        <Registration onRegisterSuccesful={() => setPage("login")} />
       )}
 
       {page === "login" && (
@@ -44,7 +43,7 @@ function App() {
         />
       )}
 
-      {/* Protected Dashboard */}
+      {/* 🔐 Protected Route */}
       {page === "dashboard" && (
         isLoggedIn ? (
           <Dashboard
@@ -65,6 +64,7 @@ function App() {
         )
       )}
 
+      {/* Dev button */}
       <button onClick={() => setPage("api")}>ApiDemo</button>
     </div>
   );
