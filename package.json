@@ -28,5 +28,18 @@
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranalisakhare0727-glitch/Project1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranalisakhare0727-glitch/Project1/issues"
+  },
+  "homepage": "https://github.com/pranalisakhare0727-glitch/Project1#readme"
 }
